@@ -3,9 +3,6 @@
 // Do not check the format of user input
 // When the input answer is the same as the title, the program ends
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-
 using namespace std;
 
 int main() {
