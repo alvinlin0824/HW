@@ -28,7 +28,7 @@ int main() {
             // Position and Number are matched
             if (num_digit == guess_digit) {
                 bulls++;
-            } else if (num % 10 == guess_digit || num % 100 == guess_digit || num % 1000 == guess_digit) {
+            } else if (num % 10 == guess_digit || (num/10) % 10 == guess_digit || (num/100) % 10 == guess_digit || (num/1000)  == guess_digit) {
                 cows++;
             }
             num_copy /= 10;
