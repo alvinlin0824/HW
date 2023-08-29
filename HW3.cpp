@@ -14,28 +14,54 @@ int main(){
                        {82,91,85},
                        {72,74,73}};
     
-    int grand_sum = 0;
-    double grand_avg;
+    int total[5] = {0};
+    double average[5];
+
+    // individual total and average
     for (int i = 0; i < 5; i++)
     {
-        int sum = 0;
-        double avg;
+        for (int j = 0; j < 3; j++)
+        {
+            total[i] += score[i][j];
+            average[i] = (double)total[i]/3;
+        }     
+    }
+    
+
+    for (int i = 0; i < 5; i++)
+        {
         cout << "student " << i+1 << endl;
         for (int j = 0; j < 3; j++)
         {
             cout << " " << j+1 << ": " << score[i][j] << endl;
-            sum += score[i][j];
-            avg = (double)sum/3;
-        }
-            grand_sum += sum;
-            grand_avg = (double)grand_sum/15;
-            cout << " " << "sum: " << sum << endl;
-            cout << " " << setprecision(2) << fixed << "avg: " << avg << endl;  
 
+        }
+            cout << " " << "sum: "<< total[i] << endl;
+            cout << " " << setprecision(2) << fixed << "avg: " << average[i] << endl;
+      }  
+
+
+    int grand_sum = 0;
+    double grand_avg;
+    for (int i = 0; i < 5; i++){
+        grand_sum += total[i];
+        grand_avg = (double)grand_sum/15;
     } 
     
     cout << "total: " << grand_sum << ", " << setprecision(2) << fixed << "avg: " << grand_avg << endl;
            
-
+    // find the highest average
+    int max = total[0];
+    int max_index = 0;
+    for (int i = 0; i < 5; i++)
+    {
+        if (total[i] > max) {
+            max = total[i];
+            max_index = i;
+        }
+    }
+    
+    cout << "highest avg: student " << max_index + 1 << ": " << setprecision(2) << fixed << average[max_index] << endl;
+    
     return 0;
 }
