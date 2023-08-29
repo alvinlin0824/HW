@@ -15,7 +15,6 @@ int main() {
     cin >> num;
 
     int guess, bulls, cows;
-    // cout << "Welcome to the 1A2B game! Try to guess the 4-digit number I'm thinking of." << endl;
     do {
         bulls = cows = 0;
         cout << "Please enter guess:" << endl;
