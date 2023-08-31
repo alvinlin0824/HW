@@ -46,15 +46,14 @@ int main(){
         if (choice == 'i')
         {
          
-                    cout << "Name: ";
-                    cin >> a[count].Name;
-                    cout << "Phone: ";
-                    cin >> a[count].Phone;
-                    cout << "Email: ";
-                    cin >> a[count].email;
-                    count++;     
+            cout << "Name: ";
+            cin >> a[count].Name;
+            cout << "Phone: ";
+            cin >> a[count].Phone;
+            cout << "Email: ";
+            cin >> a[count].email;
+            count++;     
             cout << "Insert Completed!" << endl;
-    
         }
         else if (choice == 'l'){
             for (int i = 0; i < count; i++)
@@ -65,7 +64,6 @@ int main(){
                     cout << "Email: " << a[i].email << endl;
                     cout << "===========" << endl;
                 }
- 
         }
         else if (choice == 's'){
             string filename;
@@ -89,7 +87,6 @@ int main(){
             }
             infile.close();
         }
-            
         else if (choice == 'q'){
             return 0;
             break;
@@ -97,10 +94,6 @@ int main(){
         
         system("pause");
         system("cls");
-
-
     }
-    
-
     return 0;
 }
