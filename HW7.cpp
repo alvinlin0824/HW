@@ -33,7 +33,6 @@ int main(){
     // Record count of input
     int count = 0;
     
-    string filename;
     while (true)
     {
         cout << "i: Insert" << endl;
@@ -44,9 +43,9 @@ int main(){
 
         cin >> choice;
 
-        switch (choice)
+        if (choice == 'i')
         {
-        case 'i':  
+         
                     cout << "Name: ";
                     cin >> a[count].Name;
                     cout << "Phone: ";
@@ -55,9 +54,9 @@ int main(){
                     cin >> a[count].email;
                     count++;     
             cout << "Insert Completed!" << endl;
-            break;
-        
-        case 'l':
+    
+        }
+        else if (choice == 'l'){
             for (int i = 0; i < count; i++)
                 {   
                     cout << "No." << i+1 << endl;
@@ -66,25 +65,40 @@ int main(){
                     cout << "Email: " << a[i].email << endl;
                     cout << "===========" << endl;
                 }
-            break;
-        case 's':
-            
+ 
+        }
+        else if (choice == 's'){
+            string filename;
             cout << "Enter filename(.txt): ";
             cin >> filename;
             ofstream outfile(filename);
             for (int i = 0; i < count; i++) {
-                outfile << a[i].Name << ", " << a[i].Phone << ", " << a[i].email << endl;
+                outfile << a[i].Name << "\t" << a[i].Phone << "\t" << a[i].email << endl;
             }
             outfile.close();
-            break;
-        case 'o':
-            break;
-        case 'q':
+        }
+        else if (choice == 'o'){
+            string filename;
+            cout << "Enter filename(.txt): ";
+            cin >> filename;
+
+            ifstream infile(filename);
+            while (!infile.eof()) {
+                infile >> a[count].Name >> a[count].Phone >> a[count].email;
+                count++;
+            }
+            infile.close();
+        }
+            
+        else if (choice == 'q'){
             return 0;
             break;
-        }
+         }
+        
         system("pause");
         system("cls");
+
+
     }
     
 
