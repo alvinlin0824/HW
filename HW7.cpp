@@ -89,7 +89,6 @@ int main(){
         }
         else if (choice == 'q'){
             return 0;
-            break;
          }
         
         system("pause");
