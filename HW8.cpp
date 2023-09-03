@@ -12,3 +12,91 @@
 // Type 'p': spend
 // Enter 'd': check balance
 // Type 'q': exit the program
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+class UserAccount {
+private:
+    int moneyAvailable = 0;
+
+public:
+
+    // Store money method
+    void store(double amount) {
+        if (amount >= 0){
+        moneyAvailable += amount;
+        cout << "eCash: You Stored $" << amount << endl;
+        } 
+        else {
+        cout << "eCash: Please enter an amount greater than 0" << endl;
+        }
+    }
+
+    // Pay consumption method
+    bool pay(double amount) {
+        if (amount < 0) {
+            cout << "eCash: Please enter an amount greater than 0" << endl;
+            return false;
+        }
+        else if (moneyAvailable >= amount) {
+            moneyAvailable -= amount;
+            cout << "eCash: You Paid $" << amount << endl;
+            return true;
+        } else {
+            cout << "eCash: Insufficient Balance" << endl;
+            return false;
+        }
+    }
+
+    // Display balance method
+    double display() {
+        cout << "eCash: Current balance: " << moneyAvailable << endl;
+        return moneyAvailable;
+    }
+};
+
+int main() {
+
+    UserAccount account;
+
+    char choice;
+    while(true) {
+        cout << "=== Welcome eCash ===" << endl;
+        cout << endl;
+        cout << "Hello! Please select choices:" << endl;
+        cout << "s: Store" << endl;
+        cout << "p: Purchase" << endl; 
+        cout << "d: Display balance" << endl;
+        cout << "q: Quit" << endl;
+        cin >> choice;
+
+        switch (choice) {
+            case 's':
+                double amount;
+                cout << "Enter the amount to store: ";
+                cin >> amount;
+                account.store(amount);
+                break;
+            case 'p':
+                double cost;
+                cout << "Enter the amount to pay: ";
+                cin >> cost;
+                account.pay(cost);
+                break;
+            case 'd':
+                account.display();
+                break;
+            case 'q':
+                cout << "Thank you! ByeBye!";
+                return 0;
+                break;
+        }
+        system("pause");
+        system("cls");
+    } 
+
+    return 0;
+}
