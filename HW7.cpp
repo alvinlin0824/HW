@@ -45,7 +45,6 @@ int main(){
 
         if (choice == 'i')
         {
-         
             cout << "Name: ";
             cin >> a[count].Name;
             cout << "Phone: ";
