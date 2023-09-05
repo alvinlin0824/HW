@@ -1,6 +1,11 @@
 // Dynamically configure m classes, each class has n students, 
 // and calculate the average score after entering the grades
 
+// Dynamically configure m classes with n people in each class
+// After entering the scores of n students in class m
+// Print the total score and average of each class
+// And the school's total score, average
+
 #include<stdio.h>
 #include<stdlib.h>
 int main(){
@@ -9,10 +14,8 @@ int main(){
     int **student;
 
     // number of classes
-    printf("Number of Class: ");
     scanf("%d",&m);
     // number of students
-    printf("Number of Student: ");
     scanf("%d",&n);
 
     // dynamic memory allocation
@@ -24,11 +27,9 @@ int main(){
 
     // input
     for (int i = 0; i < m; i++)
-    {   
-        printf("Class %d:\n", i+1);
+    {
         for (int j = 0; j < n; j++)
-        {   
-            printf("Student %d: ", j+1);
+        {
             scanf("%d",&student[i][j]);
         }   
     }
@@ -40,10 +41,10 @@ int main(){
         printf("class %d\n",i + 1);
         for (int j = 0; j < n; j++)
         {
-            printf("Student %d: %d\n",j + 1,student[i][j]);
+            printf(" %d: %d\n",j + 1,student[i][j]);
             individual_average += (double)student[i][j]/n;
         }
-        printf("Average of class: %.6f\n",individual_average);
+        printf(" avg: %.2f\n",individual_average);
         
     }
     
@@ -54,7 +55,7 @@ int main(){
         {
             average += (double)student[i][j]/(m*n);
         }
-    printf("Average of School: %.6f",average);
+    printf("avg: %.2f",average);
     
     free(student);
     return 0;

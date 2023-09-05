@@ -8,18 +8,19 @@
 using namespace std;
 
 int main(){
-    // int m,n;
+    int m,n;
 
-    // cin >> m >> n;
+    cin >> m >> n;
 
-    for (int i = 1; i <= 9; i++)
+    for (int i = 1; i <= m; i++)
     {
-        for (int j = 1; j <= 9; j++)
+        for (int j = 1; j <= n; j++)
         {
-            cout << j << "*" << i << "=" << setw(2) <<i*j << " ";
+            cout << i << "*" << j << "=" << setw(2) <<i*j << " ";
         }
             cout << endl;
     }
     
+
     return 0;
 }
