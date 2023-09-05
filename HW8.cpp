@@ -28,32 +28,32 @@ public:
     void store(double amount) {
         if (amount >= 0){
         moneyAvailable += amount;
-        cout << "eCash: You Stored $" << amount << endl;
+        cout << "eCash: You Stored " << amount << "." << endl;
         } 
         else {
-        cout << "eCash: Please enter an amount greater than 0" << endl;
+        cout << "eCash: Please enter a number > 0." << endl;
         }
     }
 
     // Pay consumption method
     bool pay(double amount) {
         if (amount < 0) {
-            cout << "eCash: Please enter an amount greater than 0" << endl;
+            cout << "eCash: Please enter a number > 0." << endl;
             return false;
         }
         else if (moneyAvailable >= amount) {
             moneyAvailable -= amount;
-            cout << "eCash: You Paid $" << amount << endl;
+            cout << "eCash: You spend " << amount << "." << endl;
             return true;
         } else {
-            cout << "eCash: Insufficient Balance" << endl;
+            cout << "eCash: Insufficient Balance." << endl;
             return false;
         }
     }
 
     // Display balance method
     double display() {
-        cout << "eCash: Current balance: " << moneyAvailable << endl;
+        cout << "eCash: You remaining " << moneyAvailable << endl;
         return moneyAvailable;
     }
 };
@@ -64,25 +64,25 @@ int main() {
 
     char choice;
     while(true) {
-        cout << "=== Welcome eCash ===" << endl;
-        cout << endl;
-        cout << "Hello! Please select choices:" << endl;
-        cout << "s: Store" << endl;
-        cout << "p: Purchase" << endl; 
-        cout << "d: Display balance" << endl;
-        cout << "q: Quit" << endl;
+        // cout << "=== Welcome eCash ===" << endl;
+        // cout << endl;
+        // cout << "Hello! Please select choices:" << endl;
+        // cout << "s: Store" << endl;
+        // cout << "p: Purchase" << endl; 
+        // cout << "d: Display balance" << endl;
+        // cout << "q: Quit" << endl;
         cin >> choice;
 
         switch (choice) {
             case 's':
                 double amount;
-                cout << "Enter the amount to store: ";
+                // cout << "Enter the amount to store: ";
                 cin >> amount;
                 account.store(amount);
                 break;
             case 'p':
                 double cost;
-                cout << "Enter the amount to pay: ";
+                // cout << "Enter the amount to pay: ";
                 cin >> cost;
                 account.pay(cost);
                 break;
@@ -90,7 +90,7 @@ int main() {
                 account.display();
                 break;
             case 'q':
-                cout << "Thank you! ByeBye!";
+                cout << "Thank you. Bye Bye.";
                 return 0;
                 break;
         }

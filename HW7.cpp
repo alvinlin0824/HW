@@ -35,38 +35,38 @@ int main(){
     
     while (true)
     {
-        cout << "i: Insert" << endl;
-        cout << "l: List" << endl;
-        cout << "s: Save" << endl;
-        cout << "o: Read" << endl;
-        cout << "q: Quit" << endl;
+        // cout << "i: Insert" << endl;
+        // cout << "l: List" << endl;
+        // cout << "s: Save" << endl;
+        // cout << "o: Read" << endl;
+        // cout << "q: Quit" << endl;
 
         cin >> choice;
 
         if (choice == 'i')
         {
-            cout << "Name: ";
+            // cout << "Name: ";
             cin >> a[count].Name;
-            cout << "Phone: ";
+            // cout << "Phone: ";
             cin >> a[count].Phone;
-            cout << "Email: ";
+            // cout << "Email: ";
             cin >> a[count].email;
             count++;     
-            cout << "Insert Completed!" << endl;
+            // cout << "Insert Completed!" << endl;
         }
         else if (choice == 'l'){
             for (int i = 0; i < count; i++)
                 {   
-                    cout << "No." << i+1 << endl;
+                    cout << "#" << i+1 << endl;
                     cout << "Name: " << a[i].Name << endl;
                     cout << "Phone: " << a[i].Phone << endl;
                     cout << "Email: " << a[i].email << endl;
-                    cout << "===========" << endl;
+                    // cout << "===========" << endl;
                 }
         }
         else if (choice == 's'){
             string filename;
-            cout << "Enter filename(.txt): ";
+            // cout << "Enter filename(.txt): ";
             cin >> filename;
             ofstream outfile(filename);
             for (int i = 0; i < count; i++) {
@@ -76,7 +76,7 @@ int main(){
         }
         else if (choice == 'o'){
             string filename;
-            cout << "Enter filename(.txt): ";
+            // cout << "Enter filename(.txt): ";
             cin >> filename;
 
             ifstream infile(filename);
